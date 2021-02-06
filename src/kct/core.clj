@@ -10,6 +10,7 @@
   (println "" (get keynote :ad)))
 
 (defn kct-loop [keynote i]
+  (if (= i (count (get keynote :slides))) (System/exit 0) nil)
   (print-slide keynote i)
   (kct-loop keynote
     (let [l (read-line)]
