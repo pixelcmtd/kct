@@ -14,6 +14,7 @@
   (kct-loop keynote
     (let [l (read-line)]
       (cond
+        (= l "")  (inc i)
         (= l "n") (inc i)
         (= l "p") (dec i)
         (= l "h") (dec i)
