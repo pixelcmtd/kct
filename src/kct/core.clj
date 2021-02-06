@@ -27,6 +27,7 @@
   "Parses args and starts KCT."
   [& args]
   (kct-loop
-    { :title "my wonderful presentation"
-      :slides '[["line 1" "line 2" "line 3"]["lol"]["lel"]]
-      :ad "Read ZERM! https://zerm.eu" } 0))
+    (clojure.edn/read
+      (java.io.PushbackReader.
+        (clojure.java.io/reader "test.edn")))
+    0))
