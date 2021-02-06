@@ -24,10 +24,10 @@
         :else i))))
 
 (defn -main
-  "Parses args and starts KCT."
+  "Starts KCT."
   [& args]
   (kct-loop
     (clojure.edn/read
       (java.io.PushbackReader.
-        (clojure.java.io/reader "test.edn")))
+        (clojure.java.io/reader (nth args 0))))
     0))
