@@ -28,6 +28,7 @@
 (defn -main
   "Starts KCT."
   [& args]
+  (if (= (count args) 0) (System/exit 1) nil)
   (kct-loop
     (clojure.edn/read
       (java.io.PushbackReader.

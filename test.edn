@@ -1,6 +1,33 @@
-{ :title "my wonderful presentation"
-  :slides
-   [["line 1" "line 2" "line 3"]
-    ["lol"]
-    ["lel"]]
-  :ad "Read ZERM! https://zerm.eu" }
+{:title "Simpler Presentations - Demonstrating Clojure's supremacy"
+ :ad "Use KCT: https://github.com/chrissxYT/kct"
+ :slides
+  [[""
+    ""
+    "                  Simpler Presentations                  "
+    "            Demonstrating Clojure's supremacy            "
+    "                      Chris Häußler                      "
+    ""
+    ""]
+   [""
+    " Agenda:"
+    "  * Presentation systems"
+    "  * How Clojure can help"
+    "  * Implementation details"
+    ""
+    ""]
+   [""
+    " Presentation systems suck."
+    ""
+    " BLOAT"
+    ""
+    " (and bad UX)"
+    ""]
+   [""
+    " How can Clojure improve this?"
+    ""
+    " EDN"
+    ""
+    " (and simpler code)"
+    ""]
+   ["lol"]
+   ["lel"]]}
