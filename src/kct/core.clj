@@ -1,17 +1,14 @@
-(ns kct.core
-  (:gen-class))
+(ns kct.core (:gen-class))
 
-(defn print-slide [keynote i]
-  (print "\033[1;1H\033[J")
-  (println "" (get keynote :title) (str "(" (inc i) "/" (count (get keynote :slides)) ")"))
-  (println)
-  (doall (map println (nth (get keynote :slides) i)))
-  (println)
-  (println "" (get keynote :ad)))
+(defn str-slide [keynote i]
+  (concat
+   [(str "\033[1;1H\033[J " (keynote :title) "(" (inc i) "/" (count (keynote :slides)) ")") ""]
+   (nth (keynote :slides) i)
+   ["" (str " " (keynote :ad))]))
 
 (defn kct-loop [keynote i]
-  (if (= i (count (get keynote :slides))) (System/exit 0) nil)
-  (print-slide keynote i)
+  (if (= i (count (keynote :slides))) (System/exit 0) nil)
+  (doall (map println (str-slide keynote i)))
   (kct-loop keynote
     (let [l (read-line)]
       (cond
@@ -25,12 +22,11 @@
         (= l "q") (System/exit 0)
         :else i))))
 
-(defn -main
-  "Starts KCT."
-  [& args]
-  (if (= (count args) 0) (System/exit 1) nil)
+(defn -main [& args]
+ (if (= (count args) 0) (System/exit 1)
   (kct-loop
-    (clojure.edn/read
-      (java.io.PushbackReader.
-        (clojure.java.io/reader (nth args 0))))
-    0))
+   (clojure.edn/read
+    (java.io.PushbackReader.
+     (clojure.java.io/reader
+      (nth args 0))))
+   0)))
