@@ -1,36 +1,30 @@
 # keynote creation tool
 
-FIXME: description
+A really simple tool for making keynotes.
 
 ## Installation
 
 Download from http://example.com/FIXME.
 
+jk you have to compile it yourself using lein
+
 ## Usage
 
 FIXME: explanation
 
-    $ java -jar kct-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
+    $ java -jar kct-0.1.0-standalone.jar <your_slides.edn>
 
 ## Examples
 
-...
+This repository contains a keynote about kct itself: [test.edn](test.edn)
 
 ### Bugs
 
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+None, this software is perfect.
 
 ## License
 
-Copyright © 2021 FIXME
+Copyright © 2021 chrissx Media
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
